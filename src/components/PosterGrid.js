@@ -1,9 +1,13 @@
 import '../css/PosterGrid.css';
 import Poster from './Poster'
 
-const PosterGrid = ({ posters }) => {
+const PosterGrid = ({ posters, posterClick }) => {
     const moviePosters = posters.map(poster => {
-        return <Poster image={poster.poster_path}/>
+        return <Poster
+            key={poster.id}
+            id={poster.id}
+            image={poster.poster_path} 
+            onClick={posterClick}/>
     })
 
     return (
