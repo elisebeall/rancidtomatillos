@@ -1,7 +1,7 @@
-import '../css/Poster.css';
+import '../css/Poster.css'
 
 const Poster = (props) => {
-    return <img src={props.image} alt='movie poster'/>
+    return <img src={props.image} alt={props.title}/>
 }
 
 export default Poster

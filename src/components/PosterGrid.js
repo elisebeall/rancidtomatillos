@@ -1,4 +1,4 @@
-import '../css/PosterGrid.css';
+import '../css/PosterGrid.css'
 import Poster from './Poster'
 
 const PosterGrid = ({ posters }) => {

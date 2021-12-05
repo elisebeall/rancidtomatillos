@@ -1,6 +1,6 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react'
-import '../css/App.css';
+import '../css/App.css'
 import Nav from './Nav'
 import PosterGrid from './PosterGrid'
 import movieData from '../movieData'

@@ -1,4 +1,19 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+h1 {
+  font-family: 'ArtisualDecoBlack';
+  font-size: 3em;
+  color: white;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+button {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }

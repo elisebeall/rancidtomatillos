@@ -1,0 +1,7 @@
+section {
+  background-color: gold;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: minmax(45%, auto);
+}
