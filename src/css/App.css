@@ -1,31 +1,46 @@
 @font-face {
-  font-family: 'ArtisualDecoBlack';
-  src: url('./fonts/ArtisualDecoBlack.otf');
-}
-
-@font-face {
-  font-family: 'ArtisualDecoBlackItalic';
-  src: url('./fonts/ArtisualDecoBlackItalic.otf');
-}
-
-@font-face {
-  font-family: 'ArtisualDecoRegular';
+  font-family: 'ArtisualDeco';
   src: url('./fonts/ArtisualDecoRegular.otf');
 }
 
 @font-face {
-  font-family: 'ArtisualDecoRegularItalic';
-  src: url('./fonts/ArtisualDecoRegularItalic.otf');
+  font-family: 'ACMountain';
+  src: url('./fonts/ACMountain.otf');
 }
 
 @font-face {
-  font-family: 'ArtisualDecoThin';
-  src: url('./fonts/ArtisualDecoThin.otf');
+  font-family: 'bettynoir';
+  src: url('./fonts/bettynoir.ttf');
 }
 
 @font-face {
-  font-family: 'ArtisualDecoThinItalic';
-  src: url('./fonts/ArtisualDecoThinItalic.otf');
+  font-family: 'breamcatcher';
+  src: url('./fonts/breamcatcher.ttf');
+}
+
+@font-face {
+  font-family: 'Dalmais';
+  src: url('./fonts/Dalmais.otf');
+}
+
+@font-face {
+  font-family: 'DecoBordersNF';
+  src: url('./fonts/DecoBordersNF.ttf');
+}
+
+@font-face {
+  font-family: 'NightAtTheOperaNF';
+  src: url('./fonts/NightAtTheOperaNF.otf');
+}
+
+@font-face {
+  font-family: 'ParkLaneNF';
+  src: url('./fonts/ParkLaneNF.otf');
+}
+
+@font-face {
+  font-family: 'RitzyRemixNF';
+  src: url('./fonts/RitzyRemixNF.ttf');
 }
 
 * {
@@ -36,8 +51,7 @@ html,
 body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
-  font-family: 'ArtisualDecoThin';
+  /* overflow: hidden; */
 }
 
 .App {
@@ -46,6 +60,6 @@ body {
   background-color: black;
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(50%);
+  grid-template-columns: 10% 25% 15% 50%;
+  grid-auto-rows: minmax(5%, auto);
 }

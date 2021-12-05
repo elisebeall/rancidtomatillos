@@ -1,14 +1,13 @@
 .navbar {
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 4;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 100%;
 }
 
 h1 {
-  font-family: 'ArtisualDecoBlack';
-  font-size: 3em;
+  font-family: 'ArtisualDeco';
+  font-size: 5em;
   color: #F5C106;
   padding-bottom: 0px;
   margin: 0;
@@ -24,5 +23,5 @@ button {
   width: 132px;
   height: 107px;
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
 }
