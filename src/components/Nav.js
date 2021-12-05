@@ -1,10 +1,10 @@
 import '../css/Nav.css';
 
-const Nav = () => {
+const Nav = ({ homeClick }) => {
     return (
         <header className="navbar">
             <h1>Rancid Tomatillos</h1>
-            <button>Home</button>
+            <button onClick={homeClick}>Home</button>
         </header>
     )
 }
