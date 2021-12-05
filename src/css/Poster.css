@@ -1,8 +1,10 @@
 img {
-  border: 5px dashed black;
+  margin: 10px;
+  /* border: 2px solid #594600; */
   height: 200px;
 }
 
 img:hover {
-  border: 5px solid black;
+  transform: translate(3%, 3%);
+  /* border: 2px solid black; */
 }

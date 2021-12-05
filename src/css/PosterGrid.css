@@ -1,7 +1,9 @@
 section {
-  background-color: gold;
-  border-radius: 20px;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: minmax(45%, auto);
+  background-color: #594600;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  border-radius: 50px;
+  padding: 20px 0px 0px 0px;
+  overflow: scroll;
 }

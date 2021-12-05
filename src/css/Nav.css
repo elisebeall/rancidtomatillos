@@ -1,19 +1,28 @@
 .navbar {
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column: 1 / span 3;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100%;
 }
 
 h1 {
   font-family: 'ArtisualDecoBlack';
   font-size: 3em;
-  color: white;
-  grid-column-start: 3;
+  color: #F5C106;
+  padding-bottom: 0px;
+  margin: 0;
+  grid-column-start: 4;
   grid-column-end: 4;
 }
 
 button {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  cursor: pointer;
+  background-color: black;
+  background-image: url('../assets/UpButton.png');
+  border: none;
+  width: 132px;
+  height: 107px;
+  grid-column: 1;
+  grid-row: 2;
 }
