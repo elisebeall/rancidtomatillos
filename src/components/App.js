@@ -35,8 +35,8 @@ class App extends Component {
         <Nav homeClick={this.goToHomePage}/>
         {
           this.state.showAllMovies ?
-          <PosterGrid 
-            posters={this.state.moviePosters} 
+          <PosterGrid
+            posters={this.state.moviePosters}
             posterClick={this.goToMoviePage}
           /> :
           <MovieDetails posters={this.state.moviePosters} id={this.state.moviePageId}/>
