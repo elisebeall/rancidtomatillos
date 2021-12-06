@@ -1,4 +1,4 @@
-export const endpoints = {
+const endpoints = {
     movies: 'https://rancid-tomatillos.herokuapp.com/api/v2/movies',
     /*
       {"movies":
@@ -61,3 +61,5 @@ export const endpoints = {
       DELETE
     */
 };
+
+export default endpoints
