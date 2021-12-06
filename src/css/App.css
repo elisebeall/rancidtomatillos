@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'ArtisualDeco';
+  src: url('./fonts/ArtisualDecoRegular.otf');
+}
+
+@font-face {
+  font-family: 'ACMountain';
+  src: url('./fonts/ACMountain.otf');
+}
+
+@font-face {
+  font-family: 'bettynoir';
+  src: url('./fonts/bettynoir.ttf');
+}
+
+@font-face {
+  font-family: 'breamcatcher';
+  src: url('./fonts/breamcatcher.ttf');
+}
+
+@font-face {
+  font-family: 'Dalmais';
+  src: url('./fonts/Dalmais.otf');
+}
+
+@font-face {
+  font-family: 'DecoBordersNF';
+  src: url('./fonts/DecoBordersNF.ttf');
+}
+
+@font-face {
+  font-family: 'NightAtTheOperaNF';
+  src: url('./fonts/NightAtTheOperaNF.otf');
+}
+
+@font-face {
+  font-family: 'ParkLaneNF';
+  src: url('./fonts/ParkLaneNF.otf');
+}
+
+@font-face {
+  font-family: 'RitzyRemixNF';
+  src: url('./fonts/RitzyRemixNF.ttf');
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: 10% 25% 15% 50%;
+  grid-auto-rows: minmax(5%, auto);
+}

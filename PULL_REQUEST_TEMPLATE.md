@@ -1,4 +1,4 @@
-## [name of project]
+## [RANCID TOMATILLOS]
 
 [ ] - Feature PR [🧩]
 [ ] - Refactor PR [⚙️]

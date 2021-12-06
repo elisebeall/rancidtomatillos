@@ -1,0 +1,27 @@
+.navbar {
+  grid-column: 1 / span 4;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+h1 {
+  font-family: 'ArtisualDeco';
+  font-size: 5em;
+  color: #F5C106;
+  padding-bottom: 0px;
+  margin: 0;
+  grid-column-start: 4;
+  grid-column-end: 4;
+}
+
+button {
+  cursor: pointer;
+  background-color: black;
+  background-image: url('../assets/UpButton.png');
+  border: none;
+  width: 132px;
+  height: 107px;
+  grid-column: 1;
+  grid-row: 1;
+}
