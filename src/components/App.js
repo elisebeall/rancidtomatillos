@@ -1,10 +1,12 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react'
 import '../css/App.css'
-import Nav from './Nav'
+// import Nav from './Nav'
+import HomeButton from './HomeButton'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
+import { Routes, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -44,16 +46,22 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <Nav homeClick={this.goToHomePage}/>
-        {this.state.error && <p>{this.state.error}</p>}
-        {
-          this.state.showAllMovies ?
-          <PosterGrid
-            posters={this.state.moviePosters}
-            posterClick={this.goToMoviePage}
-          /> :
-          <MovieDetails id={this.state.moviePageId}/>
-        }
+        <HomeButton homeClick={this.goToHomePage}/>
+
+        <Routes>
+          <Route 
+            path="/" 
+            element={<PosterGrid 
+                        posters={this.state.moviePosters} 
+                        posterClick={this.goToMoviePage}/>}
+          />
+          <Route 
+            path="/movie/:id"
+            element={<MovieDetails
+                        id={this.state.moviePageId}/>}
+          />
+        </Routes>
+
       </main>
     )
   }

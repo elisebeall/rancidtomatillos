@@ -1,11 +1,8 @@
 import '../css/Nav.css'
 
-const Nav = ({ homeClick }) => {
+const Nav = () => {
   return (
-    <header className="navbar">
-      <h1>Rancid Tomatillos</h1>
-      <button onClick={homeClick}>Home</button>
-    </header>
+    <h1 className="navbar">Rancid Tomatillos</h1>
   )
 }
 
