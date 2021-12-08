@@ -1,35 +1,20 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react'
 import '../css/App.css'
-// import Nav from './Nav'
+import Nav from './Nav'
 import HomeButton from './HomeButton'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       moviePosters: [],
-      showAllMovies: true,
-      moviePageId: '',
       error: ''
     }
-  }
-
-  goToMoviePage = (movieId) => {
-    this.setState({
-      showAllMovies: false,
-      moviePageId: movieId
-    })
-  }
-
-  goToHomePage = () => {
-    this.setState({
-      showAllMovies: true,
-    })
   }
 
   componentDidMount = () => {
@@ -51,14 +36,14 @@ class App extends Component {
         <Routes>
           <Route 
             path="/" 
-            element={<PosterGrid 
-                        posters={this.state.moviePosters} 
-                        posterClick={this.goToMoviePage}/>}
-          />
+            element={ <div>
+                        <Nav />
+                        <PosterGrid 
+                          posters={this.state.moviePosters} />
+                      </div>} />
           <Route 
             path="/movie/:id"
-            element={<MovieDetails
-                        id={this.state.moviePageId}/>}
+            element={<MovieDetails />}
           />
         </Routes>
 
