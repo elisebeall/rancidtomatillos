@@ -49,13 +49,13 @@ class App extends Component {
         <HomeButton homeClick={this.goToHomePage}/>
 
         <Routes>
-          <Route 
-            path="/" 
-            element={<PosterGrid 
-                        posters={this.state.moviePosters} 
+          <Route
+            path="/"
+            element={<PosterGrid
+                        posters={this.state.moviePosters}
                         posterClick={this.goToMoviePage}/>}
           />
-          <Route 
+          <Route
             path="/movie/:id"
             element={<MovieDetails
                         id={this.state.moviePageId}/>}
