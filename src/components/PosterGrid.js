@@ -1,6 +1,5 @@
 import '../css/PosterGrid.css'
 import Poster from './Poster'
-import Nav from './Nav'
 
 const PosterGrid = ({ posters, posterClick }) => {
   const moviePosters = posters.map(poster => {
@@ -13,7 +12,6 @@ const PosterGrid = ({ posters, posterClick }) => {
 
   return (
     <div>
-      <Nav />
       <section>
         {moviePosters}
       </section>

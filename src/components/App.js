@@ -1,12 +1,11 @@
-// import { render } from '@testing-library/react';
 import React, { Component } from 'react'
 import '../css/App.css'
-// import Nav from './Nav'
 import HomeButton from './HomeButton'
+import Nav from './Nav'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -51,9 +50,12 @@ class App extends Component {
         <Routes>
           <Route
             path="/"
-            element={<PosterGrid
+            element={<>
+                      <Nav />
+                      <PosterGrid
                         posters={this.state.moviePosters}
-                        posterClick={this.goToMoviePage}/>}
+                        posterClick={this.goToMoviePage}/>
+                    </>}
           />
           <Route
             path="/movie/:id"
@@ -67,4 +69,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
