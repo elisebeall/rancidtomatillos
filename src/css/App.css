@@ -54,8 +54,7 @@ body {
   text-align: center;
   background-color: black;
   display: grid;
-  grid-gap: 2px;
-  grid-template-columns: 20% 80%;
-  grid-auto-rows: minmax(5%, auto);
+  grid-template-columns: 20% 75%;
+  grid-template-rows: 15% 60%;
   padding: 5px;
 }

@@ -6,5 +6,7 @@ button {
   width: 132px;
   height: 107px;
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
 }

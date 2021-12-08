@@ -1,10 +1,9 @@
 import React from 'react'
+import '../css/HomeButton.css'
 
 const HomeButton = ({ homeClick }) => {
   return (
-    <aside>
-      <button onClick={homeClick}>Home</button>
-    </aside>
+    <button onClick={homeClick}>Home</button>
   )
 }
 

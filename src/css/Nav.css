@@ -1,16 +1,11 @@
 .navbar {
-  grid-column: 1 / span 4;
+  grid-column: 2;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 }
 
 h1 {
   font-family: 'ArtisualDeco';
   font-size: 5em;
   color: #F5C106;
-  padding-bottom: 0px;
   margin: 0;
-  grid-column-start: 4;
-  grid-column-end: 4;
 }

@@ -11,11 +11,9 @@ const PosterGrid = ({ posters, posterClick }) => {
   })
 
   return (
-    <div>
-      <section>
-        {moviePosters}
-      </section>
-    </div>
+    <section>
+      {moviePosters}
+    </section>
   )
 }
 
