@@ -14,14 +14,3 @@ h1 {
   grid-column-start: 4;
   grid-column-end: 4;
 }
-
-button {
-  cursor: pointer;
-  background-color: black;
-  background-image: url('../assets/UpButton.png');
-  border: none;
-  width: 132px;
-  height: 107px;
-  grid-column: 1;
-  grid-row: 1;
-}

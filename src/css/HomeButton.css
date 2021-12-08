@@ -1,0 +1,10 @@
+aside {
+  cursor: pointer;
+  background-color: black;
+  background-image: url('../assets/UpButton.png');
+  border: none;
+  width: 132px;
+  height: 107px;
+  grid-column: 1;
+  grid-row: 1;
+}
