@@ -12,23 +12,8 @@ class App extends Component {
     super()
     this.state = {
       moviePosters: [],
-      showAllMovies: true,
-      moviePageId: '',
       error: ''
     }
-  }
-
-  goToMoviePage = (movieId) => {
-    this.setState({
-      showAllMovies: false,
-      moviePageId: movieId
-    })
-  }
-
-  goToHomePage = () => {
-    this.setState({
-      showAllMovies: true,
-    })
   }
 
   componentDidMount = () => {
@@ -50,17 +35,14 @@ class App extends Component {
         <Routes>
           <Route
             path="/"
-            element={<>
-                      <Nav />
-                      <PosterGrid
-                        posters={this.state.moviePosters}
-                        posterClick={this.goToMoviePage}/>
-                    </>}
-          />
+            element={ <>
+                        <Nav />
+                        <PosterGrid
+                          posters={this.state.moviePosters} />
+                      </>} />
           <Route
             path="/movie/:id"
-            element={<MovieDetails
-                        id={this.state.moviePageId}/>}
+            element={<MovieDetails />}
           />
         </Routes>
 
