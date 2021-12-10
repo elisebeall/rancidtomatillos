@@ -36,6 +36,8 @@ class Movie extends Component {
       average_rating
     } = this.state.movie
 
+    const noData = 'Not available';
+
     return (
       <>
         {!this.state.movie.title ? <p>...</p> :
@@ -49,10 +51,10 @@ class Movie extends Component {
               <h3 className="rating">{average_rating.toFixed(1)}</h3>
               <p className="dollar-sign1">💲</p>
               <h3 className="budget-label">Budget</h3>
-              <h3 className="budget">{budget}</h3>
+              <h3 className="budget">{budget === 0 ? noData : budget}</h3>
               <p className="dollar-sign2">💲</p>
               <h3 className="gross-label">Gross</h3>
-              <h3 className="gross">{revenue}</h3>
+              <h3 className="gross">{revenue === 0 ? noData : revenue}</h3>
             </header>
             <h3 className="genres">{genres.join(' ⧫ ')}</h3>
             <h3 className="tagline">{tagline}</h3>
