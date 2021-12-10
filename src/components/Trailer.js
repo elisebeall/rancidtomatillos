@@ -7,10 +7,9 @@ class Trailer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      loading: true,
       videos: [],
-      sites: [],
       selectedTrailer: 0,
-      loading: true
     }
   }
 
@@ -29,8 +28,16 @@ class Trailer extends Component {
   selectVideo = (e) => {
     const trailerIndex = e.target.innerText - 1
     this.setState({
-      selectedTrailer: trailerIndex
+      selectedTrailer: trailerIndex,
     })
+  }
+
+  getSite = () => {
+    let site = 'www.youtube.com/embed'
+    if (this.state.videos[this.state.selectedTrailer].site === 'Vimeo') {
+      site = 'player.vimeo.com/video'
+    }
+    return site
   }
 
   render() {
@@ -38,16 +45,15 @@ class Trailer extends Component {
      (
       <div>
         <VideoSelector vids={this.state.videos} onClick={() => this.selectVideo}/>
-        { this.state.videos.length && 
-          <iframe 
-            width="560" 
-            height="315" 
-            src={`https://www.youtube.com/embed/${this.state.videos[this.state.selectedTrailer].key}`} 
-            title="YouTube video player" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen>
-          </iframe>
+      { this.state.videos.length && 
+            <iframe 
+              src={`https://${this.getSite()}/${this.state.videos[this.state.selectedTrailer].key}`}
+              width="560" 
+              height="315" 
+              frameBorder="0" 
+              allow="autoplay; fullscreen; picture-in-picture" 
+              title="Movie Trailer">
+            </iframe>
         }
       </div>
     )
