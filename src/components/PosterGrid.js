@@ -10,7 +10,7 @@ const PosterGrid = ({ posters }) => {
   })
 
   return (
-    <section>
+    <section className="poster-grid">
       {moviePosters}
     </section>
   )

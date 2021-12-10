@@ -1,17 +1,17 @@
 import '../css/MovieDetails.css'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Movie from './Movie'
 import Trailer from './Trailer'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
 
 const MovieDetails = () => {
-  const id = useParams().id
+  const { id } = useParams()
 
   return (
-    <div>
+    <section className="movie-details-grid">
       <Movie id={id}/>
       <Trailer id={id}/>
-    </div>
+    </section>
   )
 }
 

@@ -30,16 +30,16 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <HomeButton homeClick={this.goToHomePage}/>
+        <HomeButton homeClick={this.goToHomePage} />
 
         <Routes>
           <Route
             path="/"
             element={ <>
                         <Nav />
-                        <PosterGrid
-                          posters={this.state.moviePosters} />
-                      </>} />
+                        <PosterGrid posters={this.state.moviePosters} />
+                      </> }
+          />
           <Route
             path="/movie/:id"
             element={<MovieDetails />}
