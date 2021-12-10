@@ -25,7 +25,7 @@ class Movie extends Component {
     const {
       title,
       poster_path,
-      backdrop_path,
+      // backdrop_path,
       release_date,
       overview,
       genres,
@@ -59,7 +59,7 @@ class Movie extends Component {
           <p className="overview">{overview}</p>
           <div className="visuals">
             <img className="poster" src={poster_path} alt={title}/>
-            <img className="trailer" src="https://i.stack.imgur.com/PtbGQ.png" alt="trailer placeholder"/>
+            {/* <img className="trailer" src="https://i.stack.imgur.com/PtbGQ.png" alt="trailer placeholder"/> */}
           </div>
         </>
       }
