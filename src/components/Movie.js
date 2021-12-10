@@ -25,7 +25,7 @@ class Movie extends Component {
     const {
       title,
       poster_path,
-      backdrop_path,
+      // backdrop_path,
       release_date,
       overview,
       genres,
