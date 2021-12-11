@@ -2,7 +2,7 @@ import '../css/VideoSelector.css'
 
 const VideoSelector = ({ vids, onClick }) => {
   let vidNums = vids.map((video, index) => {
-    return <button className={"video"+index} key={index} onClick={onClick(index)}>{index + 1}</button>
+    return <button key={index} onClick={onClick(index)}>{index + 1}</button>
   })
 
   return (
