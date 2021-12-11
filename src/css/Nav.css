@@ -1,11 +1,17 @@
 .navbar {
   grid-column: 2;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
-h1 {
-  font-family: 'ArtisualDeco';
-  font-size: 5em;
-  color: #F5C106;
-  margin: 0;
+.navbar,
+.navbar > h1 {
+  font-family: 'ACMountain';
+  font-size: 4em;
+  font-stretch: expanded;
+  color: white;
+  /* color: #F5C106; */
+  filter: drop-shadow(10px 10px 5px rgba(89,70,0,0.8));
+  border-top: 5px ridge gold;
+  border-radius: 100px;
+  padding: 35px 0px 0px 0px;
 }

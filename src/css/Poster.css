@@ -1,8 +1,9 @@
-img {
+.grid-posters {
   margin: 10px;
   height: 200px;
+  filter: drop-shadow(10px 10px 5px rgba(0,0,0,0.8));
 }
 
-img:hover {
+.grid-posters:hover {
   transform: translate(3%, 3%);
 }

@@ -1,6 +1,44 @@
-.numVids {
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: space-around;
+/* .numVids {
+  background-color: white;
+  color: black;
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+} */
+/* .video-selector {
+  grid-column: 1;
+  grid-row: 1;
+} */
+
+h3 {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: 'NightAtTheOperaNF';
+  font-size: 2em;
+  align-content: center;
 }
+
+button {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: 'NightAtTheOperaNF';
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  background-image: url('../assets/button.png') 0 0;
+  transform: rotate(-45%);
+  display: flex;
+  justify-content: space-around;
+}
+
+/* button::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background-image: url('../assets/button.png') 0 0 repeat;
+  transform: rotate(-90deg);
+} */

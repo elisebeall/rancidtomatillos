@@ -2,6 +2,7 @@ import '../css/Trailer.css'
 import React, { Component } from 'react'
 import endpoints from '../endpoints'
 import VideoSelector from './VideoSelector'
+import button from '../assets/button.png'
 
 class Trailer extends Component {
   constructor(props) {
@@ -43,9 +44,9 @@ class Trailer extends Component {
   render() {
     return this.state.loading ? <p>...</p> :
      (
-      <div>
+      <div className="trailor">
         <VideoSelector vids={this.state.videos} onClick={() => this.selectVideo}/>
-        { this.state.videos.length &&
+        {this.state.videos.length &&
           <iframe
             src={`https://${this.getSite()}/${this.state.videos[this.state.selectedTrailer].key}`}
             width="560"

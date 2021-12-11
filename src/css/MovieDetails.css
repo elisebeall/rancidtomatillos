@@ -1,10 +1,34 @@
 .movie-details-grid {
   height: 100%;
+  width: 100%;
   color: white;
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   display: grid;
-  grid-template-columns: 5% 85% 5%;
-  grid-template-rows: 25% 25% 25% 25%;
-  border: 2px solid white;
+  grid-template-columns: 95%;
+  grid-template-rows: 35% 20% 30%;
 }
+
+.backdrop {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  opacity: 20%;
+  overflow: hidden;
+}
+
+/* .backdrop-overlay {
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+  /* background-image: linear-gradient(to right, rgba(0,0,0,1),rgba(0,0,0,0)); */
+/*} */

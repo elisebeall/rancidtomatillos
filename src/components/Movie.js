@@ -1,6 +1,11 @@
 import '../css/Movie.css'
 import React, { Component, Fragment } from 'react'
 import endpoints from '../endpoints'
+import Trailer from '../components/Trailer'
+import star from '../assets/star.png'
+import dollarSign1 from '../assets/dollarSign1.png'
+import dollarSign2 from '../assets/dollarSign2.png'
+
 
 class Movie extends Component {
   constructor(props) {
@@ -25,7 +30,7 @@ class Movie extends Component {
     const {
       title,
       poster_path,
-      // backdrop_path,
+      backdrop_path,
       release_date,
       overview,
       genres,
@@ -36,33 +41,46 @@ class Movie extends Component {
       average_rating
     } = this.state.movie
 
-    const noData = 'Not available';
+    const noData = 'Not Available'
 
     return (
       <>
+        <img className="backdrop backdrop-overlay" src={backdrop_path} />
         {!this.state.movie.title ? <p>...</p> :
           <>
             <header className="movie-details-header">
               <h1 className="title">{title}</h1>
               <h2 className="release">{release_date.split('-')[0]}</h2>
-              <h3 className="runtime">{runtime} mins</h3>
-              <p className="star">⭐️</p>
+              <h3 className="runtime">{runtime} <span>minutes</span></h3>
+              <img className="star" src={star} alt="star icon" />
               <h3 className="rating-label">Rating</h3>
               <h3 className="rating">{average_rating.toFixed(1)}</h3>
-              <p className="dollar-sign1">💲</p>
+              <img className="dollar-sign1" src={dollarSign1} alt="dollar sign icon" />
               <h3 className="budget-label">Budget</h3>
-              <h3 className="budget">{budget === 0 ? noData : budget}</h3>
-              <p className="dollar-sign2">💲</p>
+              <h3 className="budget">
+                {budget === 0 ?
+                  <span>{noData}</span> :
+                  <>{(budget/1000000).toFixed(1)}<span>million</span></>
+                }
+              </h3>
+              <img className="dollar-sign2" src={dollarSign2} alt="dollar sign icon" />
               <h3 className="gross-label">Gross</h3>
-              <h3 className="gross">{revenue === 0 ? noData : revenue}</h3>
+              <h3 className="gross">
+                {revenue === 0 ?
+                  <span>{noData}</span> :
+                  <>{(revenue/1000000).toFixed(1)}<span>million</span></>
+                }
+              </h3>
+              <h3 className="genres">{genres.join(' ⧫ ')}</h3>
             </header>
-            <h3 className="genres">{genres.join(' ⧫ ')}</h3>
-            <h3 className="tagline">{tagline}</h3>
-            <p className="overview">{overview}</p>
-            <div className="visuals">
-              <img className="poster" src={poster_path} alt={title}/>
-              <img className="trailer" src="https://i.stack.imgur.com/PtbGQ.png" alt="trailer placeholder"/>
-            </div>
+            <section className="movie-detail-text">
+              <h3 className="tagline">{tagline}</h3>
+              <p className="overview">{overview}</p>
+            </section>
+            <section className="visuals">
+              <img className="poster" src={poster_path} alt={title} />
+              <Trailer id={this.props.id} />
+            </section>
           </>
         }
       </>
