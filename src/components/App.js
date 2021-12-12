@@ -7,7 +7,7 @@ import Filter from './Filter'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, useParams } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -68,7 +68,7 @@ class App extends Component {
           let currentIndex = movies.length
           let randomIndex
 
-          while (currentIndex != 0) {
+          while (currentIndex !== 0) {
             randomIndex = Math.floor(Math.random() * currentIndex)
             currentIndex--
 
@@ -89,9 +89,7 @@ class App extends Component {
   }
 
   setMovieId = (query) => {
-    //console.log('search -> setMovieChoice(query)', query)
-    // this.setState({ searchKey: query })
-    // console.log('setMovieChoice -> this.state.searchKey :', this.state.searchKey)
+    console.log('search -> setMovieChoice(query)', query)
     this.setState({
       movieId: this.state.allMovies.find(movie => movie.title.toLowerCase().includes(query.toLowerCase())).id
     })
@@ -104,7 +102,6 @@ class App extends Component {
         <HomeButton homeClick={this.goToHomePage} />
 
         <Routes>
-        {!this.state.movieId ?
           <Route
             path="/"
             element={ <>
@@ -122,9 +119,9 @@ class App extends Component {
                           posters={this.state.filteredMovies}
                         />
                       </> }
-          /> :
+          />
           <Route
-            path="/?q=:query"
+            path="/search?q=:query"
             element= { <>
                         <Nav />
                         <Search

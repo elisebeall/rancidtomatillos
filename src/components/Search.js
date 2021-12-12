@@ -1,35 +1,40 @@
 import '../css/Search.css'
-import React, { useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
 
 const Search = ({ searchedMovies, searchMovies, setMovieId }) => {
-  const [searchTerm, setSearchTerm] = useState(searchedMovies)
+  const [searchState, setSearchState] = useState(searchedMovies)
   const [queryState, setQueryState] = useState('')
-  console.log('useParams', useParams())
+  let [searchParams, setSearchParams] = useSearchParams()
   const { query } = useParams()
 
+  console.log('Search -> useParams()', useParams())
+
+  useEffect(() => {
+    setQueryState(query)
+  },[query])
+
   const handleChange = (e) => {
-    setSearchTerm(e.target.value)
+    setSearchState(e.target.value)
     searchMovies(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setQueryState(searchTerm)
-    setMovieId(searchTerm)
+    setQueryState(searchState)
+    //setMovieId(queryState)
+    setSearchParams({ search: searchState })
   }
 
   return (
     <>
       <form onSubmit={e => handleSubmit(e)}>
-        <NavLink to={`/?q=${query}`} >
-          <input
-            type="text"
-            placeholder="search..."
-            value={searchTerm}
-            onChange={e => handleChange(e)}
-          />
-        </NavLink>
+        <input
+          type="text"
+          placeholder="search..."
+          value={searchState}
+          onChange={e => handleChange(e)}
+        />
       </form>
     </>
   )

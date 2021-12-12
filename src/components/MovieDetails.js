@@ -1,23 +1,24 @@
 import '../css/MovieDetails.css'
-import React, { Fragment } from 'react'
+import React from 'react'
 import Movie from './Movie'
 import { useParams } from 'react-router-dom'
 
 const MovieDetails = ({ matchQuery }) => {
+  console.log(useParams())
   const { search, id } = useParams()
 
+  console.log('search', search)
+
   const getMovieId = () => {
-    //if there's a search query, find the matching movieId
     if (search.length) {
       matchQuery(search)
     }
-    return id;
-    //if not, return the movie id from the URL
+    return id
   }
 
   return (
     <section className="movie-details-grid">
-      <Movie id={getMovieId} />
+      <Movie id={id} />
     </section>
   )
 }
