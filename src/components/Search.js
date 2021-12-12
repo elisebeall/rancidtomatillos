@@ -1,15 +1,15 @@
 import '../css/Search.css'
-import React, { useEffect, useState } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 const Search = ({ searchedMovies, searchMovies }) => {
   const [searchState, setSearchState] = useState(searchedMovies)
   let [searchParams, setSearchParams] = useSearchParams()
 
   const handleChange = (e) => {
-    setSearchState(e.target.value)
     setSearchParams({ search: e.target.value })
-    searchMovies(e.target.value)
+    setSearchState(searchParams)
+    searchMovies(searchParams)
   }
 
   return (

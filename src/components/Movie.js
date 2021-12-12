@@ -13,27 +13,36 @@ class Movie extends Component {
     super(props)
     this.state = {
       movie: {},
-      error: '',
+      errorStatus: '',
+      errorMessage: '',
       loading: true
     }
   }
 
   componentDidMount = () => {
     fetch(`${endpoints.movies}/${this.props.id}`)
-      .then(response => {
-        if(!response.ok) {
-          throw new Error('Apologies!  It appears that our server is down.  Please try again later.')
-        }
-        return response.json()
+    .then(response => {
+      if(!response.ok) {
+        throw new Error ({
+          status: response.status,
+          message: response.statusText
+        })
+      } return response.json()
+    })
+    .then(data => {
+        this.setState({
+        allMovies: data.movies,
+        filteredMovies: data.movies,
+        loading: false
       })
-      .then(data => this.setState({
-        movie: data.movie,
+    })
+    .catch(err => {
+      this.setState({
+        errorStatus: err.status,
+        errorMessage: err.message,
         loading: false
-      }))
-      .catch(err => this.setState({
-        error: err.message,
-        loading: false
-      }))
+      })
+    })
   }
 
   render() {
@@ -59,7 +68,7 @@ class Movie extends Component {
         {this.state.loading ? <Loading /> :
           <>
           {this.state.error ?
-            <Error errorStatus={this.state.error.statusCode} errorMessage={this.state.error.message} /> :
+            <Error errorStatus={this.state.error} errorMessage={this.state.error} /> :
             <>
               <header className="movie-details-header">
                 <h1 className="title">{title}</h1>
