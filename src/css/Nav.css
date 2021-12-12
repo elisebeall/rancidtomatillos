@@ -1,6 +1,6 @@
 .navbar {
-  grid-column: 2;
   margin-bottom: 10px;
+  width: 90%;
 }
 
 .navbar,

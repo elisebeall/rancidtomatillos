@@ -103,15 +103,17 @@ class App extends Component {
             path="/"
             element={ <>
                         <Nav />
-                        <Search
-                          searchedMovies={this.state.searchedMovies}
-                          searchMovies={this.searchMovies}
-                          setMovieId={this.setMovieId}
-                        />
-                        <Filter
-                          movies={this.state.filteredMovies}
-                          filterMovies={this.filterMovies}
-                        />
+                        <div className="search-filter">
+                          <Search
+                            searchedMovies={this.state.searchedMovies}
+                            searchMovies={this.searchMovies}
+                            setMovieId={this.setMovieId}
+                          />
+                          <Filter
+                            movies={this.state.filteredMovies}
+                            filterMovies={this.filterMovies}
+                          />
+                        </div>
                         <PosterGrid
                           posters={this.state.filteredMovies}
                         />

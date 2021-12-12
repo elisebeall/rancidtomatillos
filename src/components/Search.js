@@ -16,6 +16,7 @@ const Search = ({ searchedMovies, searchMovies }) => {
   return (
     <>
       <input
+        className="text-input"
         type="text"
         placeholder="search..."
         value={searchState}

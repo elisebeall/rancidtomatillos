@@ -19,6 +19,7 @@ class Filter extends Component {
       <form className="ratings-filter">
         <label for="ratings-filter">sort movies</label>
         <select
+            className="ratings"
             name="ratings"
             id="ratings-filter"
             defaultValue="reset"

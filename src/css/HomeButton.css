@@ -3,10 +3,6 @@
   border: none;
   width: 132px;
   height: 107px;
-  grid-column: 1;
-  grid-row: 2;
-  align-self: center;
-  justify-content: center;
   margin-left: 20%;
   position: fixed;
   top: 50%;

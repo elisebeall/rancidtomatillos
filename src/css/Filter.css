@@ -1,4 +1,14 @@
-.rating-filter {
-  grid-column: 2;
-  grid-row: 2;
+.ratings-filter {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.ratings {
+  padding: 1%;
+  border: 5px ridge gold;
+  font-family: "breamcatcher"; 
+  align-self: center;
+} 
