@@ -3,18 +3,8 @@ import React from 'react'
 import Movie from './Movie'
 import { useParams } from 'react-router-dom'
 
-const MovieDetails = ({ matchQuery }) => {
-  console.log(useParams())
-  const { search, id } = useParams()
-
-  console.log('search', search)
-
-  const getMovieId = () => {
-    if (search.length) {
-      matchQuery(search)
-    }
-    return id
-  }
+const MovieDetails = () => {
+  const { id } = useParams()
 
   return (
     <section className="movie-details-grid">

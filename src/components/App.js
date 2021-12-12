@@ -88,14 +88,6 @@ class App extends Component {
     this.setState({ filteredMovies: filteringMovies })
   }
 
-  setMovieId = (query) => {
-    console.log('search -> setMovieChoice(query)', query)
-    this.setState({
-      movieId: this.state.allMovies.find(movie => movie.title.toLowerCase().includes(query.toLowerCase())).id
-    })
-    console.log('this.state.movieID :', this.state.movieID)
-  }
-
   render() {
     return (
       <main className="App">
@@ -121,24 +113,8 @@ class App extends Component {
                       </> }
           />
           <Route
-            path="/search?q=:query"
-            element= { <>
-                        <Nav />
-                        <Search
-                          searchedMovies={this.state.searchedMovies}
-                          searchMovies={this.searchMovies}
-                        />
-                        <Filter
-                          movies={this.state.filteredMovies}
-                          filterMovies={this.filterMovies}
-                        />
-                        <MovieDetails matchQuery={this.setMovieId} />
-                      </> }
-            />
-          }
-          <Route
             path="/movie/:id"
-            element={<MovieDetails matchQuery={this.setMovieId} />}
+            element={<MovieDetails />}
           />
         </Routes>
 
