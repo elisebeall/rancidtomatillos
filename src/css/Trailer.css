@@ -1,4 +1,18 @@
-.trailor {
+.trailer {
+  height: 90%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trailer-vid {
+  width: 100%;
+  height: 90%;
+}
+
+
+/* .trailer {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 20% auto;
@@ -7,4 +21,4 @@
 iframe {
   grid-column: 1;
   grid-row: 2;
-}
+} */

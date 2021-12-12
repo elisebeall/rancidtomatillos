@@ -1,5 +1,5 @@
 import '../css/MovieDetails.css'
-import React, { Fragment } from 'react'
+import React from 'react'
 import Movie from './Movie'
 import { useParams } from 'react-router-dom'
 
@@ -7,7 +7,7 @@ const MovieDetails = () => {
   const { id } = useParams()
 
   return (
-    <section className="movie-details-grid">
+    <section>
       <Movie id={id} />
     </section>
   )

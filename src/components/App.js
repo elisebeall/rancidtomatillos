@@ -5,7 +5,7 @@ import Nav from './Nav'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -27,10 +27,16 @@ class App extends Component {
       }))
   }
 
+  handleHomeClick = () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    // document.PosterGrid.scrollTop = 0;
+  }
+
   render() {
     return (
       <main className="App">
-        <HomeButton homeClick={this.goToHomePage} />
+        <HomeButton homeClick={this.handleHomeClick} />
 
         <Routes>
           <Route

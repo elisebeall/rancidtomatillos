@@ -1,4 +1,4 @@
-.movie-details-grid {
+/* .movie-details-grid {
   height: 100%;
   width: 100%;
   color: white;
@@ -7,18 +7,9 @@
   display: grid;
   grid-template-columns: 95%;
   grid-template-rows: 35% 20% 30%;
-}
+} */
 
-.backdrop {
-  grid-column: 1;
-  grid-row: 1 / 4;
-  margin: 0;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  opacity: 20%;
-  overflow: hidden;
-}
+
 
 /* .backdrop-overlay {
   margin: 0;

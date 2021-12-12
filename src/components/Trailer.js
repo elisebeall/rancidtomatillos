@@ -2,7 +2,7 @@ import '../css/Trailer.css'
 import React, { Component } from 'react'
 import endpoints from '../endpoints'
 import VideoSelector from './VideoSelector'
-import button from '../assets/button.png'
+// import button from '../assets/button.png'
 
 class Trailer extends Component {
   constructor(props) {
@@ -26,10 +26,9 @@ class Trailer extends Component {
       }))
   }
 
-  selectVideo = (e) => {
-    const trailerIndex = e.target.innerText - 1
+  selectVideo = (num) => {
     this.setState({
-      selectedTrailer: trailerIndex
+      selectedTrailer: num
     })
   }
 
@@ -44,16 +43,17 @@ class Trailer extends Component {
   render() {
     return this.state.loading ? <p>...</p> :
      (
-      <div className="trailor">
-        <VideoSelector vids={this.state.videos} onClick={() => this.selectVideo}/>
+      <div className="trailer">
+        <VideoSelector vids={this.state.videos} click={(num) => this.selectVideo(num)}/>
         {this.state.videos.length &&
           <iframe
             src={`https://${this.getSite()}/${this.state.videos[this.state.selectedTrailer].key}`}
-            width="560"
-            height="315"
+            // width="560"
+            // height="315"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
-            title="Movie Trailer">
+            title="Movie Trailer"
+            className="trailer-vid">
           </iframe>
         }
       </div>
