@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import '../css/App.css'
 import HomeButton from './HomeButton'
 import Nav from './Nav'
+import Loading from './Loading'
+import Error from './Error'
 import Search from './Search'
 import Filter from './Filter'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -16,21 +18,36 @@ class App extends Component {
       allMovies: [],
       filteredMovies: [],
       searchedMovies: [],
-      movieId: '',
-      error: ''
+      loading: true,
+      errorStatus: '',
+      errorMessage: ''
     }
   }
 
   componentDidMount = () => {
     fetch(endpoints.movies)
-      .then(response => response.json())
-      .then(data => this.setState({
-        allMovies: data.movies,
-        filteredMovies: data.movies
-      }))
-      .catch(err => this.setState({
-        error: err.message
-      }))
+      .then(response => {
+        if(!response.ok) {
+          throw new Error ({
+            status: response.status,
+            message: response.statusText
+          })
+        } return response.json()
+      })
+      .then(data => {
+          this.setState({
+          allMovies: data.movies,
+          filteredMovies: data.movies,
+          loading: false
+        })
+      })
+      .catch(err => {
+        this.setState({
+          errorStatus: err.status,
+          errorMessage: err.message,
+          loading: false
+        })
+      })
   }
 
   handleHomeClick = () => {
@@ -114,9 +131,15 @@ class App extends Component {
                             filterMovies={this.filterMovies}
                           />
                         </div>
-                        <PosterGrid
-                          posters={this.state.filteredMovies}
-                        />
+                        {this.state.loading ?
+                          <Loading isLoading={this.state.loading} /> :
+                          <>
+                            {this.state.error ?
+                              <Error errorStatus={this.state.errorStatus} errorMessage={this.state.errorMessage} /> :
+                              <PosterGrid posters={this.state.filteredMovies} />
+                            }
+                          </>
+                        }
                       </> }
           />
           <Route
