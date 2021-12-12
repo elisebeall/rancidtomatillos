@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import '../css/App.css'
+import loadingIcon from '../assets/load.gif'
 import HomeButton from './HomeButton'
 import Nav from './Nav'
+import Loading from './Loading'
+import Error from './Error'
 import Search from './Search'
 import Filter from './Filter'
 import PosterGrid from './PosterGrid'
@@ -16,7 +19,7 @@ class App extends Component {
       allMovies: [],
       filteredMovies: [],
       searchedMovies: [],
-      movieId: '',
+      loading: true,
       error: ''
     }
   }
@@ -26,7 +29,8 @@ class App extends Component {
       .then(response => response.json())
       .then(data => this.setState({
         allMovies: data.movies,
-        filteredMovies: data.movies
+        filteredMovies: data.movies,
+        loading: false
       }))
       .catch(err => this.setState({
         error: err.message
@@ -107,10 +111,17 @@ class App extends Component {
                           movies={this.state.filteredMovies}
                           filterMovies={this.filterMovies}
                         />
-                        <PosterGrid
-                          posters={this.state.filteredMovies}
-                        />
-                      </> }
+                        {this.state.loading ?
+                          <Loading isLoading={this.state.loading} /> :
+                          <>
+                            {this.state.error ?
+                              <Error errorStatus={this.state.error.statusCode} errorMessage={this.state.error.message} /> :
+                              <PosterGrid posters={this.state.filteredMovies} />
+                            }
+                          </>
+                        }
+                      </>
+                    }
           />
           <Route
             path="/movie/:id"
