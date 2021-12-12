@@ -45,7 +45,7 @@ class Movie extends Component {
 
     return (
       <>
-        <img className="backdrop backdrop-overlay" src={backdrop_path} />
+        <img className="backdrop backdrop-overlay" src={backdrop_path} alt="" />
         {!this.state.movie.title ? <p>...</p> :
           <>
             <header className="movie-details-header">
