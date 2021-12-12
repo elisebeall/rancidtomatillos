@@ -1,5 +1,5 @@
 import '../css/Loading.css'
-import loadingIcon from '../assets/load2.gif'
+import loadingIcon from '../assets/load.gif'
 
 const Loading = () => {
   return (

@@ -1,6 +1,7 @@
 import '../css/Movie.css'
 import React, { Component, Fragment } from 'react'
 import Loading from './Loading'
+import Error from './Error'
 import Trailer from '../components/Trailer'
 import endpoints from '../endpoints'
 import star from '../assets/star.png'
