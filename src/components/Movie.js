@@ -20,13 +20,18 @@ class Movie extends Component {
 
   componentDidMount = () => {
     fetch(`${endpoints.movies}/${this.props.id}`)
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok) {
+          throw new Error('Apologies!  It appears that our server is down.  Please try again later.')
+        }
+        return response.json()
+      })
       .then(data => this.setState({
         movie: data.movie,
         loading: false
       }))
       .catch(err => this.setState({
-        error: err,
+        error: err.message,
         loading: false
       }))
   }

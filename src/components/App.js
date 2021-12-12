@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../css/App.css'
-import loadingIcon from '../assets/load.gif'
 import HomeButton from './HomeButton'
 import Nav from './Nav'
 import Loading from './Loading'
@@ -10,7 +9,7 @@ import Filter from './Filter'
 import PosterGrid from './PosterGrid'
 import MovieDetails from './MovieDetails'
 import endpoints from '../endpoints'
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -26,16 +25,23 @@ class App extends Component {
 
   componentDidMount = () => {
     fetch(endpoints.movies)
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok) {
+          throw new Error ('Apologies!  It appears that our server is down.  Please try again later.')
+        } return response.json()
+      })
       .then(data => this.setState({
         allMovies: data.movies,
         filteredMovies: data.movies,
         loading: false
       }))
-      .catch(err => this.setState({
-        error: err.message,
-        loading: false
-      }))
+      .catch(err => {
+        console.log('catch -> err', err)
+        this.setState({
+          error: err.message,
+          loading: false
+        })
+      })
   }
 
   filterMovies = (filterType) => {
@@ -116,7 +122,7 @@ class App extends Component {
                           <Loading isLoading={this.state.loading} /> :
                           <>
                             {this.state.error ?
-                              <Error errorStatus={this.state.error.statusCode} errorMessage={this.state.error.message} /> :
+                              <Error errorStatus={this.state.error} errorMessage={this.state.error} /> :
                               <PosterGrid posters={this.state.filteredMovies} />
                             }
                           </>

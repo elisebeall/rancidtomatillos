@@ -56,10 +56,11 @@ const endpoints = {
       GET or
       POST: { movie_id: <Integer>, rating: <Integer between 1 and 10> }
     */
-    ratingsId: 'https://rancid-tomatillos.herokuapp.com/api/v2/users/:user_id/ratings/:rating_id'
+    ratingsId: 'https://rancid-tomatillos.herokuapp.com/api/v2/users/:user_id/ratings/:rating_id',
     /*
       DELETE
     */
+    errorTesting: 'https://rancid-tomatillos.herokuapp.com/api/v2/moviese'
 };
 
 export default endpoints
