@@ -21,28 +21,28 @@ class Movie extends Component {
 
   componentDidMount = () => {
     fetch(`${endpoints.movies}/${this.props.id}`)
-    .then(response => {
-      if(!response.ok) {
-        throw new Error ({
-          status: response.status,
-          message: response.statusText
+      .then(response => {
+        if(!response.ok) {
+          throw new Error ({
+            status: response.status,
+            message: response.statusText
+          })
+        } return response.json()
+      })
+      .then(data => {
+          this.setState({
+          allMovies: data.movies,
+          filteredMovies: data.movies,
+          loading: false
         })
-      } return response.json()
-    })
-    .then(data => {
+      })
+      .catch(err => {
         this.setState({
-        allMovies: data.movies,
-        filteredMovies: data.movies,
-        loading: false
+          errorStatus: err.status,
+          errorMessage: err.message,
+          loading: false
+        })
       })
-    })
-    .catch(err => {
-      this.setState({
-        errorStatus: err.status,
-        errorMessage: err.message,
-        loading: false
-      })
-    })
   }
 
   render() {
