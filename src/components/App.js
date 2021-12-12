@@ -33,7 +33,8 @@ class App extends Component {
         loading: false
       }))
       .catch(err => this.setState({
-        error: err.message
+        error: err.message,
+        loading: false
       }))
   }
 
