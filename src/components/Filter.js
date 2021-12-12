@@ -17,12 +17,11 @@ class Filter extends Component {
   render() {
     return (
       <form className="ratings-filter">
-        <label for="ratings-filter">sort movies</label>
+        <label htmlFor="ratings-filter">sort movies</label>
         <select
             className="ratings"
             name="ratings"
             id="ratings-filter"
-            defaultValue="reset"
             value={this.state.filterType}
             onChange={e => this.setSortOrder(e)}
         >

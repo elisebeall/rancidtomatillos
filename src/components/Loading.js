@@ -3,7 +3,9 @@ import loadingIcon from '../assets/load.gif'
 
 const Loading = () => {
   return (
-    <img className="loading-icon" src={loadingIcon} alt="loading" />
+    <div className="loading-area">
+      <img className="loading-icon" src={loadingIcon} alt="loading" />
+    </div>
   )
 }
 

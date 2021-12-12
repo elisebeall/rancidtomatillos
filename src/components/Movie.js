@@ -31,9 +31,8 @@ class Movie extends Component {
         } return response.json()
       })
       .then(data => {
-          this.setState({
-          allMovies: data.movies,
-          filteredMovies: data.movies,
+        this.setState({
+          movie: data.movie,
           loading: false
         })
       })
@@ -65,7 +64,7 @@ class Movie extends Component {
       <>
         {this.state.loading ? <Loading /> :
           <>
-            {this.state.error ? <Error errorStatus={this.state.error} errorMessage={this.state.error} /> :
+            {this.state.error ? <Error errorStatus={this.state.errorStatus} errorMessage={this.state.errorMessage} /> :
               <>
                 <section className="movie-details">
                   <img src={backdrop_path} alt="movie background" className="backdrop"/>
@@ -75,7 +74,7 @@ class Movie extends Component {
                         <div className="all-numbers">
                           <div className="numbers">
                             <div className="number-text">
-                              <h2 className="release">{release_date.split('-')[0]}</h2>
+                              <h2 className="release">{release_date?.split('-')[0]}</h2>
                               <h3 className="runtime">{runtime} <span>min</span></h3>
                             </div>
                           </div>
@@ -94,7 +93,7 @@ class Movie extends Component {
                         </div>
                     </header>
                     <section className="content">
-                      <h3 className="genres">{genres.join(' ⧫ ')}</h3>
+                      <h3 className="genres">{genres?.join(' ⧫ ')}</h3>
                       <h3 className="tagline">{tagline}</h3>
                       <p className="overview">{overview}</p>
                     </section>
