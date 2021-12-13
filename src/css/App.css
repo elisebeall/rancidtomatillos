@@ -4,6 +4,16 @@
 }
 
 @font-face {
+  font-family: 'ArtisualDecoThin';
+  src: url('./fonts/ArtisualDecoThin.otf');
+}
+
+@font-face {
+  font-family: 'ArtisualDecoThinItalic';
+  src: url('./fonts/ArtisualDecoThinItalic.otf');
+}
+
+@font-face {
   font-family: 'ACMountain';
   src: url('./fonts/ACMountain.otf');
 }
@@ -43,18 +53,35 @@
   src: url('./fonts/RitzyRemixNF.ttf');
 }
 
+* {
+  font-size: 1em;
+}
+
 html,
 body {
+  background-color: black;
   height: 100%;
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .App {
   width: 100%;
+  height: auto;
   text-align: center;
   background-color: black;
-  display: grid;
-  grid-gap: 2px;
-  grid-template-columns: 10% 25% 15% 50%;
-  grid-auto-rows: minmax(5%, auto);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.search-filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1%;
 }

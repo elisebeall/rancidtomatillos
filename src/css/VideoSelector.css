@@ -1,0 +1,21 @@
+.video-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 8%;
+  z-index: 1;
+  opacity: 1;
+}
+
+.video-btn {
+  font-family: 'NightAtTheOperaNF';
+  font-size: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 5%;
+}
+
+.video-btn:hover {
+  cursor: pointer;
+}

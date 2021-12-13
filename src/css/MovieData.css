@@ -1,0 +1,9 @@
+.movie-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    margin: 0;
+}

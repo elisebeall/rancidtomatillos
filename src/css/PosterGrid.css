@@ -1,8 +1,7 @@
-section {
+.poster-grid {
   background-color: #594600;
-  grid-column: 2 / span 3;
-  grid-row-start: 2;
   border-radius: 50px;
+  border: 20px ridge gold;
   padding: 20px 0px 0px 0px;
-  overflow: scroll;
+  width: 87%;
 }

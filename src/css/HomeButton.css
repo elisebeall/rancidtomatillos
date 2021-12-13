@@ -1,0 +1,23 @@
+.home-button {
+  background-image: url('../assets/button.png');
+  border: none;
+  width: 132px;
+  height: 107px;
+  margin-left: 20%;
+  position: fixed;
+  top: 50%;
+  left: -20%;
+}
+
+.home-button:hover {
+  transform: translate(0%, -5%);
+  transform: scale(1.2, 1.2);
+}
+
+.home-button:visited {
+  transform: rotate(90deg);
+}
+
+.home-button::after {
+  transform: rotate(90deg);
+}
