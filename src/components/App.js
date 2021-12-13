@@ -19,8 +19,7 @@ class App extends Component {
       filteredMovies: [],
       searchedMovies: [],
       loading: true,
-      errorStatus: '',
-      errorMessage: ''
+      error: ''
     }
   }
 
@@ -28,14 +27,12 @@ class App extends Component {
     fetch(endpoints.movies)
       .then(response => {
         if(!response.ok) {
-          throw new Error ({
-            status: response.status,
-            message: response.statusText
-          })
-        } return response.json()
+          throw new Error(`${response.status}: ${response.statusText}`)
+        } 
+        return response.json()
       })
       .then(data => {
-          this.setState({
+        this.setState({
           allMovies: data.movies,
           filteredMovies: data.movies,
           loading: false
@@ -43,8 +40,7 @@ class App extends Component {
       })
       .catch(err => {
         this.setState({
-          errorStatus: err.status,
-          errorMessage: err.message,
+          error: err.message,
           loading: false
         })
       })
@@ -134,8 +130,9 @@ class App extends Component {
                         {this.state.loading ?
                           <Loading isLoading={this.state.loading} /> :
                           <>
+                            {console.log(this.state.error)}
                             {this.state.error ?
-                              <Error errorStatus={this.state.errorStatus} errorMessage={this.state.errorMessage} /> :
+                              <Error /> :
                               <PosterGrid posters={this.state.filteredMovies} />
                             }
                           </>

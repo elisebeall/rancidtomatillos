@@ -12,60 +12,47 @@ describe('Rancid Tomatillos home page data load flow', () => {
     })
     
     // Home button
-    // it('', () => {
+    it('', () => {
         
-        // })
+        })
         
-        // Sad path 500 error
+        Sad path 500 error
+    it('', () => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+            statusCode: 500,
+            ok: false,
+            body: {},
+        })
+        cy.visit('localhost:3000')
+        cy.get('.error').contains('Apologies!')
+    })
+})
+
+describe('Rancid Tomatillos search flow', () => {
+
+    beforeEach(() => {
+        cy.visit('localhost:3000')
+        cy.fixture('movies.json').as('movies')
+    })
+
+    it('When the user types into the search input, the movies are filtered by the value of the input.', () => {
+        cy.visit('localhost:3000')
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+            body: { movies }
+        })
+    })
+    
+    it('When the user deletes an input, the movies are filtered by the new value of the input.', () => {
+        cy.visit('localhost:3000')
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+            body: { movies }
+        })
+    })
+    
     it('', () => {
         cy.visit('localhost:3000')
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-            body: { 
-                status: 503,
-             }
+            body: { movies }
         })
-        cy.get('.error').contains('Apologies!')
     })
-
-    // it.skip('', () => {
-    //     cy.intercept('GET', 'localhost:3000', {
-    //         body: { 
-    //             status: 503,
-    //          }
-    //     })
-    // })
-
-    // it('', () => {
-        
-    // })
-
 })
-
-// describe('Rancid Tomatillos search flow', () => {
-
-//     beforeEach(() => {
-//         cy.visit('localhost:3000')
-//         cy.fixture('movies.json').as('movies')
-//     })
-
-//     it('When the user types into the search input, the movies are filtered by the value of the input.', () => {
-//         cy.visit('localhost:3000')
-//         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-//             body: { movies }
-//         })
-//     })
-    
-//     it('When the user deletes an input, the movies are filtered by the new value of the input.', () => {
-//         cy.visit('localhost:3000')
-//         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-//             body: { movies }
-//         })
-//     })
-    
-//     it('', () => {
-//         cy.visit('localhost:3000')
-//         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-//             body: { movies }
-//         })
-//     })
-// })
