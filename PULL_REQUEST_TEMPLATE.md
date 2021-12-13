@@ -1,11 +1,11 @@
 ## [RANCID TOMATILLOS]
 
-[ ] - Feature PR [🧩]
-[ ] - Refactor PR [⚙️]
-[ ] - BugFix PR [🐞]
-[ ] - User Interface PR [🖍]
-[ ] - Error Handling PR [⚠️]
-[ ] - Testing PR [🧑‍💻]
+- [ ] - Feature PR [🧩]
+- [ ] - Refactor PR [⚙️]
+- [ ] - BugFix PR [🐞]
+- [ ] - User Interface PR [🖍]
+- [ ] - Error Handling PR [⚠️]
+- [ ] - Testing PR [🧑‍💻]
 
 **What (if any) features are you implementing?**
 
@@ -26,3 +26,5 @@
 **Goals? Next steps?**
 
  - (NA)
+
+**Current Screenshots**
