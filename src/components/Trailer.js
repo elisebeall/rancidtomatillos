@@ -10,6 +10,7 @@ class Trailer extends Component {
       loading: true,
       videos: [],
       selectedTrailer: 0,
+      error: ''
     }
   }
 

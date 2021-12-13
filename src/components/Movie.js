@@ -14,8 +14,7 @@ class Movie extends Component {
     super(props)
     this.state = {
       movie: {},
-      errorStatus: '',
-      errorMessage: '',
+      error: '',
       loading: true
     }
   }
@@ -24,11 +23,9 @@ class Movie extends Component {
     fetch(`${endpoints.movies}/${this.props.id}`)
       .then(response => {
         if(!response.ok) {
-          throw new Error ({
-            status: response.status,
-            message: response.statusText
-          })
-        } return response.json()
+          throw new Error(`${response.status}: ${response.statusText}`)
+        } 
+        return response.json()
       })
       .then(data => {
         this.setState({
@@ -38,8 +35,7 @@ class Movie extends Component {
       })
       .catch(err => {
         this.setState({
-          errorStatus: err.status,
-          errorMessage: err.message,
+          error: err.message,
           loading: false
         })
       })
@@ -64,7 +60,7 @@ class Movie extends Component {
       <>
         {this.state.loading ? <Loading /> :
           <>
-            {this.state.error ? <Error errorStatus={this.state.errorStatus} errorMessage={this.state.errorMessage} /> :
+            {this.state.error ? <Error /> :
               <>
                 <section className="movie-details">
                   <img src={backdrop_path} alt="movie background" className="backdrop"/>
