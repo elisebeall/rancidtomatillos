@@ -54,7 +54,7 @@ class App extends Component {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
-  
+
   filterMovies = (filterType) => {
     switch (filterType) {
       case 'descendingRating':
