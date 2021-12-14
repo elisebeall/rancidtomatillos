@@ -4,7 +4,7 @@
 ## How to Use the App:
 
 - Clone down this repo to your computer
-![Screenshot of clone & copy buttons](tree/main/src/assets/clone.png)
+![Screenshot of clone & copy buttons](https://github.com/elisebeall/rancidtomatillos/blob/main/src/assets/clone.png)
 - Access the root folder in your Terminal
 `cd ${location downloaded}/rancidtomatillos/`
 - Type `npm install` to install all required dependencies
@@ -14,11 +14,11 @@
 
 ## Preview:
 
-![Home Page](src/assets/videos/home.mov)
-![Search](src/assets/videos/search.mov)
-![Filter](src/assets/videos/filter.mov)
-![Movie Details Page](src/assets/videos/movie-details.mov)
-![Trailers](src/assets/videos/trailers.mov)
+https://github.com/elisebeall/rancidtomatillos/blob/main/src/assets/videos/home.mov
+https://github.com/elisebeall/rancidtomatillos/blob/main/src/assets/videos/search.mov
+https://github.com/elisebeall/rancidtomatillos/blob/main/src/assets/videos/filter.mov
+https://github.com/elisebeall/rancidtomatillos/blob/main/src/assets/videos/movie-details.mov
+https://github.com/elisebeall/rancidtomatillos/blob/main/src/assets/videos/trailers.mov
 
 ## Primary Technologies Used:
 
