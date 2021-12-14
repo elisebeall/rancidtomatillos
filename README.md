@@ -1,5 +1,10 @@
 # **RANCID TOMATILLOS**
 
+> This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different!
+
+### Browse movies by poster.  Search by name.  Sort by rating or release date.  Pick a movie to see details like budget and tagline.  Watch trailers.
+#### Pop some corn!
+
 ![slice1](https://user-images.githubusercontent.com/724355/146039380-241a2671-2ed0-47c9-9aa7-2fc7a20310ac.png)
 
 ## How to Use the App:
