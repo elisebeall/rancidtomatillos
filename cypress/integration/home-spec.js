@@ -45,17 +45,17 @@ describe('Rancid Tomatillos search flow', () => {
 
     beforeEach(() => {
         cy.fixture('movies.json').as('movies')
-    })
-
-    it.only('this is a placeholder', () => {})
-
-    it('When the user types into the search input, the movies are filtered by the value of the input.', () => {
         cy.intercept('GET',  'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
             statusCode: 200,
             ok: true,
             body: { movies },
         })
         cy.visit('localhost:3000')
+    })
+
+    it.only('this is a placeholder', () => {})
+
+    it('When the user types into the search input, the movies are filtered by the value of the input.', () => {
         cy.get('.text-input').type('mul')
         cy.get('.poster-grid').children().should('have.length', 1)
     })
@@ -77,15 +77,15 @@ describe('Rancid Tomatillos sort flow', () => {
 
     beforeEach(() => {
         cy.fixture('movies.json').as('movies')
-    })
-    
-    it('When the user selects the filter for Rating: high to low, the movies should change accordingly.', () => {
         cy.intercept('GET',  'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
             statusCode: 200,
             ok: true,
             body: { movies },
         })
         cy.visit('localhost:3000')
+    })
+    
+    it('When the user selects the filter for Rating: high to low, the movies should change accordingly.', () => {
         cy.get('.ratings').select('descendingRating')
         cy.get('.poster-grid').find('img').first()
             .should('have.attr', 'src')
@@ -96,12 +96,6 @@ describe('Rancid Tomatillos sort flow', () => {
     })
     
     it('When the user selects the filter for Rating: low to high, the movies should change accordingly.', () => {
-        cy.intercept('GET',  'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-            statusCode: 200,
-            ok: true,
-            body: { movies },
-        })
-        cy.visit('localhost:3000')
         cy.get('.ratings').select('ascendingRating')
         cy.get('.poster-grid').find('img').first()
             .should('have.attr', 'src')
@@ -112,12 +106,6 @@ describe('Rancid Tomatillos sort flow', () => {
     })
     
     it('When the user selects the filter for Date: newest to oldest, the movies should change accordingly.', () => {
-        cy.intercept('GET',  'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-            statusCode: 200,
-            ok: true,
-            body: { movies },
-        })
-        cy.visit('localhost:3000')
         cy.get('.ratings').select('descendingDate')
         cy.get('.poster-grid').find('img').last()
             .should('have.attr', 'src')
@@ -125,12 +113,6 @@ describe('Rancid Tomatillos sort flow', () => {
     })
     
     it('When the user selects the filter for Date: oldest to neweset, the movies should change accordingly.', () => {
-        cy.intercept('GET',  'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-            statusCode: 200,
-            ok: true,
-            body: { movies },
-        })
-        cy.visit('localhost:3000')
         cy.get('.ratings').select('ascendingDate')
         cy.get('.poster-grid').find('img').first()
             .should('have.attr', 'src')
@@ -138,12 +120,6 @@ describe('Rancid Tomatillos sort flow', () => {
     })
     
     it('When the user selects a filter type for Randomize, the movies should change accordingly.', () => {
-        cy.intercept('GET',  'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-            statusCode: 200,
-            ok: true,
-            body: { movies },
-        })
-        cy.visit('localhost:3000')
         cy.get('.ratings').select('random')
         cy.get('.poster-grid').children().should('have.length', 3)
     })
