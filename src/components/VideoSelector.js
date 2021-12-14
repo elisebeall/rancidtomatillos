@@ -7,7 +7,6 @@ const VideoSelector = ({ vids, click }) => {
 
   return (
     <div className="video-selector">
-      {vids.length === 0 && <h3 className="no-trailers">There are no trailers available for this movie</h3>}
       {vids.length > 1 && vidNums}
     </div>
   )

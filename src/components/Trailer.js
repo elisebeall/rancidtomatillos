@@ -45,14 +45,15 @@ class Trailer extends Component {
      (
       <div className="trailer">
         <VideoSelector vids={this.state.videos} click={(num) => this.selectVideo(num)}/>
-        {this.state.videos.length &&
+        {this.state.videos.length ?
           <iframe
             src={`https://${this.getSite()}/${this.state.videos[this.state.selectedTrailer].key}`}
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             title="Movie Trailer"
             className="trailer-vid">
-          </iframe>
+          </iframe> :
+          <h3 className="no-trailers">There are no trailers available for this movie</h3>
         }
       </div>
     )

@@ -130,7 +130,6 @@ class App extends Component {
                         {this.state.loading ?
                           <Loading isLoading={this.state.loading} /> :
                           <>
-                            {console.log(this.state.error)}
                             {this.state.error ?
                               <Error /> :
                               <PosterGrid posters={this.state.filteredMovies} />
