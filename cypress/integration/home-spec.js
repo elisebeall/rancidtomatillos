@@ -30,7 +30,7 @@ describe('Rancid Tomatillos home page data load flow', () => {
         .window().its('scrollY').should('equal', 0)
     })
 
-    it('If the movie posters data is unavailable (server errro), the user should see an error message.', () => {
+    it('If the movie posters data is unavailable (server error), the user should see an error message.', () => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
             statusCode: 500,
             ok: false,
