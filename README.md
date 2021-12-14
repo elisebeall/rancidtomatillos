@@ -4,7 +4,7 @@
 ## How to Use the App:
 
 - Clone down this repo to your computer
-![Screenshot of clone & copy buttons](src/assets/clone.png)
+![Screenshot of clone & copy buttons](tree/main/src/assets/clone.png)
 - Access the root folder in your Terminal
 `cd ${location downloaded}/rancidtomatillos/`
 - Type `npm install` to install all required dependencies
