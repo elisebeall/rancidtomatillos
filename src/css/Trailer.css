@@ -3,7 +3,7 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .trailer-vid {
@@ -11,4 +11,10 @@
   height: 90%;
   z-index: 1;
   opacity: 1;
+  margin: 1%;
+}
+
+.no-trailers {
+  font-family: 'NightAtTheOperaNF';
+  font-size: 200%;
 }

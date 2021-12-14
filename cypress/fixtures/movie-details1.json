@@ -1,0 +1,21 @@
+{
+  "movie" :
+  {
+      "id": 597398,
+      "title": "Away",
+      "poster_path": "https://image.tmdb.org/t/p/original//c59eplVELdwrUfGBUAZVin3HfaL.jpg",
+      "backdrop_path": "https://image.tmdb.org/t/p/original//ccwPF5jN09S4Cz7u6qs3T2yKOpO.jpg",
+      "release_date": "2019-11-15",
+      "overview": "After suffering a plane crash on a mysterious island, a young man embarks on an epic journey through forests, deserts and mountains trying to escape the shadow of a huge dark spirit.",
+      "genres": [
+      "Animation",
+      "Adventure",
+      "Fantasy"
+      ],
+      "budget": 0,
+      "revenue": 0,
+      "runtime": 75,
+      "tagline": "",
+      "average_rating": 4.2
+  }
+}

@@ -1,8 +1,8 @@
 import '../css/Error.css'
 
-const Error = ({ errorStatus, errorMessage }) => {
+const Error = () => {
   return (
-    <h2 className="error">Apologies! {errorStatus && `${errorStatus}: `} {errorMessage && `${errorMessage}.`} Please go back and try again.</h2>
+    <h2 className="error">Apologies! There was an issue. Please go back and try again.</h2>
   )
 }
 
