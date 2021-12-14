@@ -53,23 +53,27 @@ describe('Rancid Tomatillos search flow', () => {
         cy.visit('localhost:3000')
     })
 
-    it.only('this is a placeholder', () => {})
-
     it('When the user types into the search input, the movies are filtered by the value of the input.', () => {
-        cy.get('.text-input').type('mul')
+        cy.get('.text-input').type('u')
+        cy.get('.poster-grid').children().should('have.length', 2)
+        cy.get('.text-input').type('l')
         cy.get('.poster-grid').children().should('have.length', 1)
+        cy.get('.text-input').clear()
+        cy.get('.poster-grid').children().should('have.length', 3)
     })
     
-    it.skip('When the user deletes an input, the movies are filtered by the new value of the input.', () => {
-
+    it('When the user deletes an input, the movies are filtered by the new value of the input.', () => {
+        cy.get('.text-input').type('ul')
+        cy.get('.poster-grid').children().should('have.length', 1)
+        cy.get('.text-input').type('{backspace}')
+        cy.get('.poster-grid').children().should('have.length', 2)
+        cy.get('.text-input').type('{backspace}')
+        cy.get('.poster-grid').children().should('have.length', 3)
     })
     
-    it.skip('When typing into the search input, the URL should reflect the value of the search.', () => {
-
-    })
-    
-    it.skip('When the user types a search value with no matches, a warning appears.', () => {
-
+    it('When typing into the search input, the URL should reflect the value of the search.', () => {
+        cy.get('.text-input').type('mul')
+            .url().should('include', '?search=mul')
     })
 })
 
