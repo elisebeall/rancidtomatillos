@@ -17,13 +17,15 @@
 ## Preview
 
 
-![search](https://user-images.githubusercontent.com/724355/146035138-12defc8a-cc28-46ee-9bf1-6d7b14f44a3f.gif)
+![home](https://user-images.githubusercontent.com/724355/146037438-b18a5016-cbb2-4ac9-b9f4-a7a4985d5395.png)
 
-![trailers](https://user-images.githubusercontent.com/724355/146035156-a964542f-158b-49d5-8ae3-2e761f02d740.gif)
+![search](https://user-images.githubusercontent.com/724355/146035138-12defc8a-cc28-46ee-9bf1-6d7b14f44a3f.gif)
 
 ![filter](https://user-images.githubusercontent.com/724355/146035173-1d6065b1-e12e-4e4a-a973-bf5ebaca2ce0.gif)
 
 ![movie-details](https://user-images.githubusercontent.com/724355/146035198-775a573b-c637-4816-919f-a046a776bc92.gif)
+
+![trailers](https://user-images.githubusercontent.com/724355/146035156-a964542f-158b-49d5-8ae3-2e761f02d740.gif)
 
 
 ## Primary Technologies Used:
