@@ -1,12 +1,13 @@
 .navbar {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   width: 90%;
+  margin: 3%;
 }
 
 .navbar,
 .navbar > h1 {
   font-family: 'ACMountain';
-  font-size: 4em;
+  font-size: 400%;
   font-stretch: expanded;
   color: white;
   filter: drop-shadow(10px 10px 5px rgba(89,70,0,0.8));
@@ -14,3 +15,9 @@
   border-radius: 100px;
   padding: 35px 0px 0px 0px;
 }
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    font-size: 300%;
+  }
+} 

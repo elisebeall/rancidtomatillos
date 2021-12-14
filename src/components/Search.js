@@ -1,4 +1,3 @@
-import '../css/Search.css'
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
@@ -14,7 +13,7 @@ const Search = ({ searchedMovies, searchMovies }) => {
 
   return (
       <input
-        className="text-input"
+        className="input"
         type="text"
         placeholder="search..."
         value={searchState}

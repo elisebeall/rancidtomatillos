@@ -1,4 +1,3 @@
-import '../css/Filter.css'
 import React, { Component } from 'react'
 
 class Filter extends Component {
@@ -16,10 +15,9 @@ class Filter extends Component {
 
   render() {
     return (
-      <form className="ratings-filter">
-        <label htmlFor="ratings-filter">sort movies</label>
         <select
-            className="ratings"
+            aria-label="sorts movies"
+            className="input"
             name="ratings"
             id="ratings-filter"
             value={this.state.filterType}
@@ -32,7 +30,6 @@ class Filter extends Component {
           <option value="ascendingDate"> DATE: oldest to newest </option>
           <option value="random"> Randomize! </option>
         </select>
-      </form>
     )
   }
 }

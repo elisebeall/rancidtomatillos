@@ -1,3 +1,16 @@
+/*
+Responsive design goals:
+Home - 
+1) 600px: Search and sort: centered and column
+2) *600px: Shrink title size
+3) 600px: Increase input size (revisit sizes)
+4) HomeButton - rework: Maybe transparent, smaller
+  -- Breakpoint: appears when scrolled past header 
+5) 600px: single row posters
+6) 
+
+*/
+
 @font-face {
   font-family: 'ArtisualDeco';
   src: url('./fonts/ArtisualDecoRegular.otf');
@@ -76,7 +89,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .search-filter {
@@ -85,3 +98,25 @@ button {
   align-items: center;
   margin: 1%;
 }
+
+.input {
+  padding: 1%;
+  border: 5px ridge gold;
+  font-family: "breamcatcher"; 
+  align-self: center;
+  margin: 1%;
+} 
+
+@media screen and (max-width: 600px) {
+  .input {
+    font-size: 175%;
+    width: 60%;
+  }
+
+  .search-filter {
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+  }
+} 
+
