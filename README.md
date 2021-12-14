@@ -1,5 +1,6 @@
 # Rancid Tomatillos
 
+![slice1](https://user-images.githubusercontent.com/724355/146039380-241a2671-2ed0-47c9-9aa7-2fc7a20310ac.png)
 
 ## How to Use the App:
 
