@@ -8,8 +8,8 @@ const Search = ({ searchedMovies, searchMovies }) => {
 
   const handleChange = (e) => {
     setSearchParams({ search: e.target.value })
-    setSearchState(searchParams)
-    searchMovies(searchParams)
+    setSearchState(e.target.value)
+    searchMovies(e.target.value)
   }
 
   return (

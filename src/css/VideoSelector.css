@@ -19,3 +19,8 @@
 .video-btn:hover {
   cursor: pointer;
 }
+
+.no-trailers {
+  font-family: 'NightAtTheOperaNF';
+  font-size: 200%;
+}
