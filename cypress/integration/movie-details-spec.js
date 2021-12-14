@@ -87,7 +87,7 @@ describe('Rancid Tomatillos movie trailer flow', () => {
     cy.intercept('GET', `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movie4.movie.id}/trailer`, {
       body: videos4
     })
-    cy.get('.video-selector').should('contain', 'There are no trailers available for this movie')
+    cy.get('.trailer').should('contain', 'There are no trailers available for this movie')
   })
 
 })
