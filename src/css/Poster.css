@@ -9,3 +9,15 @@
   transform: translate(3%, 3%);
   filter: drop-shadow(10px 10px 15px rgba(245,193,6,0.8));
 }
+
+@media screen and (max-width: 1024px) {
+  .grid-posters {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-posters {
+    width: 80%;
+  }
+}

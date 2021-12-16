@@ -1,12 +1,12 @@
 /*
 Responsive design goals:
 Home - 
-1) 600px: Search and sort: centered and column
+1) *600px: Search and sort: centered and column
 2) *600px: Shrink title size
-3) 600px: Increase input size (revisit sizes)
+3) *600px: Increase input size (revisit sizes)
 4) HomeButton - rework: Maybe transparent, smaller
   -- Breakpoint: appears when scrolled past header 
-5) 600px: single row posters
+5) *600px: single row posters
 6) 
 
 */

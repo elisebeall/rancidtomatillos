@@ -14,10 +14,12 @@
   transform: scale(1.2, 1.2);
 }
 
-.home-button:visited {
+/* .home-button:visited {
   transform: rotate(90deg);
 }
 
 .home-button::after {
   transform: rotate(90deg);
-}
+} */
+
+@media screen and (scroll)
