@@ -13,7 +13,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "my-server -p 3000",
+    "start": "localhost:3000",
     "cy:run": "cypress run",
     "build": "react-scripts build",
     "test": "start-server-and-test start http://localhost:3000 cy:run",
