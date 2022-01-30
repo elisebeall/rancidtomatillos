@@ -13,12 +13,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "localhost:3000",
-    "cy:run": "cypress run",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "start-server-and-test start http://localhost:3000 cy:run",
-    "eject": "react-scripts eject",
-    "cypress": "./node_modules/.bin/cypress open"
+    "cy:run": "cypress run",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
