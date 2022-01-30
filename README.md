@@ -1,3 +1,4 @@
+![](https://app.travis-ci.com/elisebeall/rancidtomatillos.svg?branch=main)
 # **RANCID TOMATILLOS**
 
 > This project is definitely not Rotten Tomatoes. Nor is it Netflix. Nor is it IMDB. It’s R A N C I D T O M A T I L L O S. Very different!
